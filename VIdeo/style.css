@@ -1,0 +1,46 @@
+body{
+    min-height: 100vh;
+    margin: 0;
+    /* display :flex设置为弹性容器  设置后可以使用justify-content */
+    display: flex;
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+    background: pink url(https://unsplash.it/1500/900?image=1021);
+    background-size: cover;
+}
+.wrapper{
+    width: 550px;
+    display: flex;
+}
+video .flex{
+    /* 阴影偏移 值 x轴 y轴  x轴偏移 y轴偏移*/
+    box-shadow:0 0 1px 3px rgb(0,0 ,0，0.1);
+    flex: 1;
+}
+
+.speed{
+    background-color: #efefef;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    border-radius: 50px;
+    box-shadow:0 0 1px 3px rgb(0,0 ,0，0.1);
+    /* 超出则隐藏 */
+    overflow: hidden;
+    /* background: linear-gradient(-170deg,#2376ae 0%,#c16ecf 100%); */
+}
+.speed-bar{
+    width: 100%;
+    height: 16.3%;
+    /* 渐变色 */
+    background: linear-gradient(-170deg,#2376ae 0%,#c16ecf 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    color:#fff;
+    cursor: pointer;
+}
