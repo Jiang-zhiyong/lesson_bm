@@ -1,0 +1,192 @@
+body{
+    background: #78e08f;
+    margin: 0;
+}
+.container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 232px;
+    transform: translate(-50%,-50%); 
+    
+    /* 块元素之间会有间隙 */
+    font-size: 0;
+}
+.ball{
+    border:8px solid ;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.face{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    
+    border-top-right-radius: 15px;
+}
+/* 伪类 */
+.face::before{
+    content:"";
+    width: 18px;
+    height: 8px;
+    background: #badc58;
+    position: absolute;
+    right: -8px;
+    top: 20px;
+    border-radius: 50%;
+}
+.face::after{
+    content:"";   /*必须要写的*/
+    width: 18px;
+    height: 8px;
+    background: #badc58;
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    border-radius: 50%;
+}
+
+.eye{
+    width: 15px;
+    height: 14px;
+    border-radius: 50%;
+    border-top: 5px solid #000;
+    position: absolute;
+}
+.eye-l{
+    left: 10px;
+}
+.eye-r{
+   right: 5px;
+}
+.mouth{
+    width: 30px;
+    height: 14px;
+    border-radius: 50%;
+    border-bottom: 5px solid #000;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translate(2px);
+}
+.face-r{
+    left: 0;
+    top: 37px;
+}
+/* 右边脸腮红 */
+.face-r::before{
+    width: 10px;
+    height: 10px;
+    right: -4px;
+    
+}
+.face-r::after{
+    width: 10px;
+    height: 10px;
+    left: 5px;
+}
+/* 后属性会覆盖前属性 */
+.eye-r-p{
+    border-bottom: 5px solid #000;
+    border-top: none;
+}
+.kiss-m{
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    opacity: 0;
+    animation: kiss-m  4s ease infinite;
+}
+@keyframes kiss-m{
+    0%{opacity: 0;}
+    55%{opacity: 0;}
+    55.1%{opacity: 1;}
+    66%{opacity: 1;}
+    66.1%{opacity: 0;}
+}
+.kiss{
+    width: 13px;height: 10px;background-color: #fff;
+    border-radius: 50%;
+    border-left: 5px solid #000;
+}
+.face-l{
+    animation: face 4s ease infinite ;
+}
+@keyframes face{
+    0%{ transform: translate(0) rotate(0);}
+    5%{transform: translate(0) rotate(0);}
+    10%{transform: translate(5px) rotate(-2deg);}
+    15%{transform: translate(0) rotate(0);}
+    20%{transform: translate(5px) rotate(-2deg);}
+    25%{transform: translate(0) rotate(0);}
+    100%{transform: translate(0) rotate(0);}
+}
+#l-ball{
+    animation: l-ball 4s ease infinite ;
+    z-index: 1;
+}
+@keyframes l-ball{
+    0%{ transform: translate(0)}
+    5%{transform: translate(0)}
+    10%{transform: translate(20px)}
+    30%{transform: translate(20px)}
+    45%{transform: translate(0)}
+    100%{transform: translate(0)}
+}
+/* .face-r{
+    animation: face-r 4s ease infinite
+}
+@keyframes face-r{
+    0%{ transform: translate(0) rotate(0);}
+    55%{transform: translate(0) rotate(0);}
+    60%{transform: translate(-5px) rotate(-2deg);}
+    64%{transform: translate(0) rotate(0);}
+    67%{transform: translate(-5px) rotate(-2deg);}
+    90%{transform: translate(0) rotate(0);}
+    100%{transform: translate(0) rotate(0);}
+} */
+#r-ball{
+    animation: kiss 4s ease infinite ;
+}
+/* @keyframes r-ball{
+    0%{ transform: translate(0)}
+    45%{transform: translate(0)}
+    50%{transform: translate(20px)}
+    55%{transform: translate(0)}
+    65%{transform: translate(-20px)}
+    85%{transform: translate(-20px)}
+    90%{transform: translate(0);}
+    100%{transform: translate(0)}
+} */
+/* @keyframes r-ball{
+    0%{ transform: translate(0)}
+    45%{transform: translate(0)}
+    55%{transform: rotate(45deg) translate(20px)}
+} */
+@keyframes kiss{
+    40%{transform: translate(0);}
+    50%{transform: translate(30px) rotate(20deg);}
+    60%{transform: translate(-33px);}
+    67%{transform: translate(-33px);}
+    77%{transform: translate(0);}
+}
+.mouth-r{
+    animation: mouth-m 4s ease infinite;
+}
+@keyframes mouth-m{
+    0%{opacity: 1;}
+    54.8%{opacity: 1;}
+    55%{opacity: 0;}
+    66%{opacity: 0;}
+    66.1%{opacity: 1;}
+}
